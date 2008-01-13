@@ -29,6 +29,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
     * Switched to PCRE
     * Removed protected keyword to make it work with PHP4
     * Added examples from web site
+    * Coding style fixes
+    * Second argument to display() is now a bool
  </notes>
  <contents>
   <dir name="/">
@@ -73,6 +75,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
     * Switched to PCRE
     * Removed protected keyword to make it work with PHP4
     * Added examples from web site
+    * Coding style fixes
+    * Second argument to display() is now a bool
  </notes>
  </release>
 

@@ -4,22 +4,28 @@
  * 
  * A very simple Smarty-like template sytem
  * 
- * @package BTS
- * @version 0.5
+ * PHP Version 4.2.0
+ * 
+ * @category  HTML
+ * @package   BTS
+ * @author    Bill Shupp <hostmaster@shupp.org> 
  * @copyright 2006-2007 Bill Shupp
- * @author Bill Shupp <hostmaster@shupp.org> 
- * @license GPL 2.0  {@link http://www.gnu.org/licenses/gpl.txt}
+ * @license   GPL 2.0  {@link http://www.gnu.org/licenses/gpl.txt}
+ * @link      http://shupp.org/bts
  */
+
 /**
  * bts 
  * 
- * @package BTS
- * @version 0.5
+ * @category  HTML
+ * @package   BTS
+ * @author    Bill Shupp <hostmaster@shupp.org> 
  * @copyright 2006-2007 Bill Shupp
- * @author Bill Shupp <hostmaster@shupp.org> 
- * @license GPL 2.0  {@link http://www.gnu.org/licenses/gpl.txt}
+ * @license   GPL 2.0  {@link http://www.gnu.org/licenses/gpl.txt}
+ * @link      http://shupp.org/bts
  */
-class BTS {
+class BTS
+{
     /**
      * var_array 
      * 
@@ -35,7 +41,8 @@ class BTS {
      * @access public
      * @return void
      */
-    function bts() {
+    function bts()
+    {
         if (!defined(BTS_TEMPLATE_DIR)) 
             define(BTS_TEMPLATE_DIR, './templates/');
         $this->var_array['php_self'] = $_SERVER['PHP_SELF'];
@@ -45,12 +52,14 @@ class BTS {
      * 
      * Assign a variable to $var_array
      * 
-     * @param mixed $name 
-     * @param mixed $value 
+     * @param mixed $name  variable name
+     * @param mixed $value variable value
+     * 
      * @access public
      * @return void
      */
-    function assign($name, $value) {
+    function assign($name, $value)
+    {
         $this->var_array[$name] = $value;
     }
     /**
@@ -58,21 +67,23 @@ class BTS {
      * 
      * return the parsed PHP contents of a file
      * 
-     * @param mixed $file 
+     * @param mixed $file filename
+     * 
      * @access public
      * @return $contents
      */
-    function get_contents($file) {
+    function get_contents($file)
+    {
         $full_path = BTS_TEMPLATE_DIR.'/'.$file;
         if (!is_readable($full_path)) {
             die("BTS Error: Could not retrieve $full_path");
         } else {
             // Get contents and parse PHP
-            foreach($this->var_array as $key => $val) {
+            foreach ($this->var_array as $key => $val) {
                 $$key = $val;
             }
             ob_start();
-            include ($full_path);
+            include $full_path;
             $buffer = ob_get_contents();
             ob_end_clean();
             return $buffer;
@@ -83,16 +94,18 @@ class BTS {
      * 
      * Parse template data
      * 
-     * @param mixed $data 
+     * @param mixed $data contents to parse
+     * 
      * @return $data
      */
-    function parse($data) {
+    function parse($data)
+    {
         // Replace Tags
-        foreach($this->var_array as $key => $value) {
+        foreach ($this->var_array as $key => $value) {
             if (is_array($value)) {
                 $data = preg_replace('/{[$]*' . trim($key) . '}/i',
                             'Array', $data);
-                foreach($value as $ar_key => $ar_val) {
+                foreach ($value as $ar_key => $ar_val) {
                     $data = preg_replace('/{[$]*' . trim($key) . '.'
                                     . trim($ar_key) . '}/i',
                                 trim($ar_val), $data);
@@ -110,15 +123,17 @@ class BTS {
      * Output data using print() if second argument is 0.
      * Otherwise, return the data to the caller
      * 
-     * @param mixed $file 
-     * @param int $return 
+     * @param mixed $file   filename
+     * @param bool  $return whether to return rather than display
+     * 
      * @access public
-     * @return void
+     * @return mixed string $data or void
      */
-    function display($file, $return = 0) {
+    function display($file, $return = false)
+    {
         $data = $this->get_contents($file);
         $data = $this->parse($data);
-        if ($return == 1) return $data;
+        if ($return == true) return $data;
         print ($data);
     }
     /**
@@ -126,19 +141,22 @@ class BTS {
      * 
      * Determinte which option is selected in an array, output
      * as an <option> list
-     * @param mixed $opt_array 
-     * @param mixed $selected_option 
+     * 
+     * @param mixed $opt_array       options array
+     * @param mixed $selected_option selected option
+     * 
      * @access public
      * @return void
      */
-    function bts_selectoptions($opt_array, $selected_option) {
+    function bts_selectoptions($opt_array, $selected_option)
+    {
         $out = '';
-        foreach($opt_array as $key => $val) {
+        foreach ($opt_array as $key => $val) {
             $selected = '';
             if ($val == $selected_option) {
                 $selected = ' selected';
             }
-            $out.= "<option$selected>$val\n";
+            $out .= "<option$selected>$val\n";
         }
         return $out;
     }
@@ -148,17 +166,21 @@ class BTS {
      * Simple function for cycling items like bgcolor in a foreach loop
      * Derived from the Smarty Plugin by Monte Ohrt
      * 
-     * @param mixed $values 
-     * @param string $name 
+     * @param mixed  $values bgcolor values
+     * @param string $name   name
+     * 
      * @access public
      * @return void
      */
-    function cycle($values, $name = 'default') {
+    function cycle($values, $name = 'default')
+    {
         static $cycle_vars;
-        if (isset($cycle_vars[$name]['values']) && $cycle_vars[$name]['values'] != $values) {
+        if (isset($cycle_vars[$name]['values']) 
+            && $cycle_vars[$name]['values'] != $values) {
             $cycle_vars[$name]['index'] = 0;
         }
         $cycle_vars[$name]['values'] = $values;
+
         $cycle_array = explode(',', $cycle_vars[$name]['values']);
         if (!isset($cycle_vars[$name]['index'])) {
             $cycle_vars[$name]['index'] = 0;
