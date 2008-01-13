@@ -14,22 +14,33 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>hostmaster@shupp.org</email>
   <active>yes</active>
  </lead>
- <date>2007-02-02</date>
- <time>14:56:36</time>
+ <date>2008-01-13</date>
+ <time>10:44:00</time>
  <version>
-  <release>0.5</release>
-  <api>0.5</api>
+  <release>0.6.0</release>
+  <api>0.5.0</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
  <license>GPL2.0 (http://www.gnu.org/licenses/gpl.txt)</license>
- <notes>Initial Release
+ <notes>
+    * Switched to PCRE
+    * Removed protected keyword to make it work with PHP4
+    * Added examples from web site
  </notes>
  <contents>
   <dir name="/">
-   <file baseinstalldir="/" name="BTS.php" role="php" />
+   <file name="BTS.php" role="php" />
+   <file baseinstalldir="doc/BTS" name="examples/ex1.php" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/ex2.php" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/ex3.php" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/ex4.php" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/templates/tpl1.tpl" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/templates/tpl2.tpl" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/templates/tpl3.tpl" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/templates/tpl4.tpl" role="doc" />
   </dir>
  </contents>
  <dependencies>
@@ -40,10 +51,31 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <pearinstaller>
     <min>1.4.0b1</min>
    </pearinstaller>
+   <extension>
+     <name>pcre</name>
+   </extension>
   </required>
  </dependencies>
  <phprelease />
  <changelog>
+ <release>
+ <version>
+  <release>0.6.0</release>
+  <api>0.5.0</api>
+ </version>
+ <date>2008-01-13</date>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license>GPL2.0 (http://www.gnu.org/licenses/gpl.txt)</license>
+ <notes>
+    * Switched to PCRE
+    * Removed protected keyword to make it work with PHP4
+    * Added examples from web site
+ </notes>
+ </release>
+
   <release>
    <version>
     <release>0.5</release>
