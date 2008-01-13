@@ -84,19 +84,22 @@ class BTS {
      * Parse template data
      * 
      * @param mixed $data 
-     * @access protected
      * @return $data
      */
-    protected function parse($data) {
+    function parse($data) {
         // Replace Tags
         foreach($this->var_array as $key => $value) {
             if (is_array($value)) {
-                $data = eregi_replace("{[$]*".trim($key) ."}", 'Array', $data);
+                $data = preg_replace('/{[$]*' . trim($key) . '}/i',
+                            'Array', $data);
                 foreach($value as $ar_key => $ar_val) {
-                    $data = eregi_replace("{[$]*".trim($key) .".".trim($ar_key) ."}", trim($ar_val), $data);
+                    $data = preg_replace('/{[$]*' . trim($key) . '.'
+                                    . trim($ar_key) . '}/i',
+                                trim($ar_val), $data);
                 }
             } else {
-                $data = eregi_replace("{[$]*".trim($key) ."}", trim($value), $data);
+                $data = preg_replace('/{[$]*' . trim($key) .'}/i',
+                            trim($value), $data);
             }
         }
         return $data;
