@@ -9,7 +9,7 @@
  * @category  HTML
  * @package   BTS
  * @author    Bill Shupp <hostmaster@shupp.org> 
- * @copyright 2006-2007 Bill Shupp
+ * @copyright 2006-2008 Bill Shupp
  * @license   GPL 2.0  {@link http://www.gnu.org/licenses/gpl.txt}
  * @link      http://shupp.org/bts
  */
@@ -20,7 +20,7 @@
  * @category  HTML
  * @package   BTS
  * @author    Bill Shupp <hostmaster@shupp.org> 
- * @copyright 2006-2007 Bill Shupp
+ * @copyright 2006-2008 Bill Shupp
  * @license   GPL 2.0  {@link http://www.gnu.org/licenses/gpl.txt}
  * @link      http://shupp.org/bts
  */
