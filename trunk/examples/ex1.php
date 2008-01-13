@@ -1,5 +1,5 @@
 <?php
-require('BTS.php');
+require_once 'BTS.php';
 $tpl = new BTS;
 
 $tpl->assign('title', 'Welcome to my web site');

@@ -5,7 +5,7 @@ $names_array[1] = 'shupp';
 $names_array[2] = 'bob';
 $names_array[3] = 'jones';
 
-require('BTS.php');
+require_once 'BTS.php';
 $tpl = new BTS;
 
 $tpl->assign('title', "Here's a List of names, with cycling tr bgcolors:");

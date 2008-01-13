@@ -2,7 +2,7 @@
 
 $name_array = array('first' => 'bill', 'last' => 'shupp');
 
-require('BTS.php');
+require_once 'BTS.php';
 $tpl = new BTS;
 
 $tpl->assign('title', 'Welcome to my web site');
