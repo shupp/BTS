@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.5.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>BTS</name>
+ <channel>pear.merchbox.com</channel>
+ <summary>Bill&apos;s Template System</summary>
+ <description>Very simple Smarty-like template system, but with only very basic features.
+ </description>
+ <lead>
+  <name>Bill Shupp</name>
+  <user>shupp</user>
+  <email>hostmaster@shupp.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2008-01-13</date>
+ <time>10:44:00</time>
+ <version>
+  <release>0.6.0</release>
+  <api>0.5.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license>GPL2.0 (http://www.gnu.org/licenses/gpl.txt)</license>
+ <notes>
+    * Switched to PCRE
+    * Removed protected keyword to make it work with PHP4
+    * Added examples from web site
+    * Coding style fixes
+    * Second argument to display() is now a bool
+ </notes>
+ <contents>
+  <dir name="/">
+   <file name="BTS.php" role="php" />
+   <file baseinstalldir="doc/BTS" name="examples/ex1.php" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/ex2.php" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/ex3.php" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/ex4.php" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/templates/tpl1.tpl" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/templates/tpl2.tpl" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/templates/tpl3.tpl" role="doc" />
+   <file baseinstalldir="doc/BTS" name="examples/templates/tpl4.tpl" role="doc" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+   <extension>
+     <name>pcre</name>
+   </extension>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+ <release>
+ <version>
+  <release>0.6.0</release>
+  <api>0.5.0</api>
+ </version>
+ <date>2008-01-13</date>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license>GPL2.0 (http://www.gnu.org/licenses/gpl.txt)</license>
+ <notes>
+    * Switched to PCRE
+    * Removed protected keyword to make it work with PHP4
+    * Added examples from web site
+    * Coding style fixes
+    * Second argument to display() is now a bool
+ </notes>
+ </release>
+
+  <release>
+   <version>
+    <release>0.5</release>
+    <api>0.5</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>-2007-02-05</date>
+   <license>GPL2.0 (http://www.gnu.org/licenses/gpl.txt)</license>
+   <notes>Initial Release
+   </notes>
+  </release>
+ </changelog>
+</package>
